@@ -63,6 +63,8 @@ struct Constant {
     
     static let bookNow = "Book Now"
     static let aboutMe = "About Me"
+    static let preference = "Preference"
+    static let sport = "Sport"
     static let updateProfile = "Update Profile"
     static let changePassword = "Change Password"
     static let updateSport = "Update Sport"
@@ -71,6 +73,7 @@ struct Constant {
     static let sureAboutLogout = "Are you sure you want to logout?"
     static let logout = "Logout"
     static let settings = "Settings"
+    static let logoutConfirmation = "Are you sure, You want to logout?"
     
     static let enterExistingPassword = "Enter your existing password"
     static let existingPassword = "Existing Password"
@@ -79,10 +82,14 @@ struct Constant {
     static let confirmNewPassword = "Confirm New Password"
     static let enterNewPassword = "Please enter your new password."
     static let enterConfirmNewPassword = "Please confirm your new password."
+    static let passwordChangeSuccess = "Password changed successfully"
+    static let profileUpdateSuccess = "Profile updated successfully"
+    static let sportUpdateSuccess = "Sport updated successfully"
     
     static let noLocation = "No location found"
     static let locationRequired = "Your current location is required."
-    
-    static let bookingRequestSent = "Booking request sent success"
+    static let bookingRequestSent = "Booking request sent to your coach."
+    static let bookingRequestAccepted = "Booking request has been accepted."
+    static let bookingRequestRejected = "Booking request has been rejected."
     
 }

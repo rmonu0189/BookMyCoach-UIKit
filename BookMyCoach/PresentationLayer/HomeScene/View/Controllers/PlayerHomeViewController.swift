@@ -19,6 +19,7 @@ class PlayerHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
+        tableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +59,12 @@ class PlayerHomeViewController: UIViewController {
             self.placemarkNameItem.title = placemark
         }
         
+        viewModel.showBookingSuccess.bind { success in
+            if success == true {
+                ToastView.showSuccess(Constant.bookingRequestSent)
+            }
+        }
+        
     }
 
 }
@@ -71,6 +78,9 @@ extension PlayerHomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cellWithType(NearbyCoachTableViewCell.self, indexPath: indexPath)
         cell.fill(with: viewModel.coach(at: indexPath.item))
+        cell.bookNowAction = { [weak self] coachId in
+            self?.viewModel.bookNowAction(coachId: coachId)
+        }
         return cell
     }
     

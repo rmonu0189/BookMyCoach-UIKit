@@ -239,12 +239,12 @@
         <!--Tell us more about you-->
         <scene sceneID="1af-6T-798">
             <objects>
-                <viewController storyboardIdentifier="UpdateProfileViewController" id="wS6-e1-ffa" customClass="UpdateProfileViewController" customModule="BookMyCoach" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="UpdateProfileViewController" hidesBottomBarWhenPushed="YES" id="wS6-e1-ffa" customClass="UpdateProfileViewController" customModule="BookMyCoach" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="quQ-Pt-uxP">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TKu-2v-XHA">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TKu-2v-XHA">
                                 <rect key="frame" x="0.0" y="140" width="414" height="722"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableFooterView" contentMode="scaleToFill" id="UFE-PC-f6N">
@@ -352,7 +352,7 @@
                                                 <constraint firstAttribute="width" constant="250" id="fE3-pk-Pzb"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
-                                            <state key="normal" title="NEXT">
+                                            <state key="normal" title="DONE">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </state>
                                             <connections>
@@ -431,12 +431,12 @@
         <!--Choose your sport-->
         <scene sceneID="Quw-Hy-ozf">
             <objects>
-                <viewController storyboardIdentifier="SportListViewController" id="e0G-TN-IZ9" customClass="SportListViewController" customModule="BookMyCoach" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SportListViewController" hidesBottomBarWhenPushed="YES" id="e0G-TN-IZ9" customClass="SportListViewController" customModule="BookMyCoach" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5cB-FD-iQk">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ahx-KZ-cFd">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ahx-KZ-cFd">
                                 <rect key="frame" x="0.0" y="140" width="414" height="638"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
@@ -572,7 +572,7 @@
             <size key="intrinsicContentSize" width="163.5" height="34"/>
         </designable>
         <designable name="ygk-OA-e1k">
-            <size key="intrinsicContentSize" width="45" height="33"/>
+            <size key="intrinsicContentSize" width="48" height="33"/>
         </designable>
     </designables>
     <resources>

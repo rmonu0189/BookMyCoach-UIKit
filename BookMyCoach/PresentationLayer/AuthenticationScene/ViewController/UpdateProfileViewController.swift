@@ -17,6 +17,7 @@ class UpdateProfileViewController: ImagePickerBaseViewController {
     @IBOutlet weak var aboutYouConstraint: NSLayoutConstraint!
     
     var viewModel: UpdateProfileViewModel!
+    private var selectedImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -80,14 +81,15 @@ class UpdateProfileViewController: ImagePickerBaseViewController {
                         AppDICoordinator.sportListViewController().showAsRoot(self)
                     }
                 } else {
-                    self?.popViewController()
+                    ToastView.showSuccess(Constant.profileUpdateSuccess)
+                    self?.popController()
                 }
             }
         }
     }
 
     @IBAction func nextButtonPressed(_ sender: Any) {
-        let imageData = profileImageView.image?.compressImageDataAspectRatio()
+        let imageData = selectedImage?.compressImageDataAspectRatio()
         viewModel.prepareInput(fullName: fullNameTextField.trimText,
                                hourlyPrice: hourlyRateTextField.trimText,
                                bio: aboutYouTextField.trimText,
@@ -101,6 +103,7 @@ class UpdateProfileViewController: ImagePickerBaseViewController {
     
     private func addImageHandler() {
         imagePickerHandler = { [weak self] (image, url) in
+            self?.selectedImage = image
             self?.profileImageView.image = image
         }
     }

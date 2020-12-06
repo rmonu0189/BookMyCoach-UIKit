@@ -108,6 +108,18 @@
 		32231B83257C0C81000A8E21 /* PendingBookingCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32231B82257C0C81000A8E21 /* PendingBookingCellViewModel.swift */; };
 		3251DF4A257AAAAC0099901B /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3251DF49257AAAAC0099901B /* Home.storyboard */; };
 		3289BA482579F14300B3615F /* UItextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3289BA472579F14300B3615F /* UItextField+Extension.swift */; };
+		32E545B9257C9CD2009CD027 /* ProfileInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E545B8257C9CD2009CD027 /* ProfileInfoTableViewCell.swift */; };
+		32E545BE257C9E52009CD027 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E545BD257C9E52009CD027 /* ProfileViewModel.swift */; };
+		32E545C1257C9F65009CD027 /* ProfileInfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E545C0257C9F65009CD027 /* ProfileInfoCellViewModel.swift */; };
+		32E545C5257CB34E009CD027 /* ProfileMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E545C4257CB34E009CD027 /* ProfileMenuTableViewCell.swift */; };
+		32E545C9257CB3D5009CD027 /* LogoutUserRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E545C8257CB3D5009CD027 /* LogoutUserRepositoryProtocol.swift */; };
+		32E545CC257CB3F6009CD027 /* LogoutUserUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E545CB257CB3F6009CD027 /* LogoutUserUseCase.swift */; };
+		32E545CF257CC249009CD027 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E545CE257CC249009CD027 /* ChangePasswordViewController.swift */; };
+		32E545D2257CC2AE009CD027 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E545D1257CC2AE009CD027 /* ChangePasswordViewModel.swift */; };
+		32E545D5257CC4F5009CD027 /* ChangePasswordRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E545D4257CC4F5009CD027 /* ChangePasswordRepositoryProtocol.swift */; };
+		32E545D8257CC515009CD027 /* ChangePasswordUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32E545D7257CC515009CD027 /* ChangePasswordUseCase.swift */; };
+		4F5F52EA257C949200DD6F93 /* BookCoachRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F52E9257C949200DD6F93 /* BookCoachRepositoryProtocol.swift */; };
+		4F5F52ED257C94A900DD6F93 /* BookCoachUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F52EC257C94A900DD6F93 /* BookCoachUseCase.swift */; };
 		4F6038B1257BA07600129F73 /* BookingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6038B0257BA07600129F73 /* BookingCollectionViewCell.swift */; };
 		4F6038B4257BA13A00129F73 /* CustomCell+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6038B3257BA13A00129F73 /* CustomCell+Helper.swift */; };
 		4F6038BF257BA5E100129F73 /* PaddedLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6038BE257BA5E100129F73 /* PaddedLabel.swift */; };
@@ -117,6 +129,8 @@
 		4F6038CF257BC8FB00129F73 /* NearbyCoachTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6038CE257BC8FB00129F73 /* NearbyCoachTableViewCell.swift */; };
 		4F6038D2257BC9EC00129F73 /* NearbyCoachViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6038D1257BC9EC00129F73 /* NearbyCoachViewModel.swift */; };
 		4F6FF057257BDA6800128E87 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F6FF056257BDA6800128E87 /* LocationManager.swift */; };
+		4F74CC5A257C9FB5007CDB12 /* CoachRespondRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74CC59257C9FB5007CDB12 /* CoachRespondRepositoryProtocol.swift */; };
+		4F74CC5D257CA00E007CDB12 /* CoachResponseUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F74CC5C257CA00E007CDB12 /* CoachResponseUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -221,6 +235,18 @@
 		32231B82257C0C81000A8E21 /* PendingBookingCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PendingBookingCellViewModel.swift; sourceTree = "<group>"; };
 		3251DF49257AAAAC0099901B /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3289BA472579F14300B3615F /* UItextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UItextField+Extension.swift"; sourceTree = "<group>"; };
+		32E545B8257C9CD2009CD027 /* ProfileInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoTableViewCell.swift; sourceTree = "<group>"; };
+		32E545BD257C9E52009CD027 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		32E545C0257C9F65009CD027 /* ProfileInfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoCellViewModel.swift; sourceTree = "<group>"; };
+		32E545C4257CB34E009CD027 /* ProfileMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuTableViewCell.swift; sourceTree = "<group>"; };
+		32E545C8257CB3D5009CD027 /* LogoutUserRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUserRepositoryProtocol.swift; sourceTree = "<group>"; };
+		32E545CB257CB3F6009CD027 /* LogoutUserUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutUserUseCase.swift; sourceTree = "<group>"; };
+		32E545CE257CC249009CD027 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		32E545D1257CC2AE009CD027 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		32E545D4257CC4F5009CD027 /* ChangePasswordRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordRepositoryProtocol.swift; sourceTree = "<group>"; };
+		32E545D7257CC515009CD027 /* ChangePasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordUseCase.swift; sourceTree = "<group>"; };
+		4F5F52E9257C949200DD6F93 /* BookCoachRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoachRepositoryProtocol.swift; sourceTree = "<group>"; };
+		4F5F52EC257C94A900DD6F93 /* BookCoachUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoachUseCase.swift; sourceTree = "<group>"; };
 		4F6038B0257BA07600129F73 /* BookingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookingCollectionViewCell.swift; sourceTree = "<group>"; };
 		4F6038B3257BA13A00129F73 /* CustomCell+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CustomCell+Helper.swift"; sourceTree = "<group>"; };
 		4F6038BE257BA5E100129F73 /* PaddedLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddedLabel.swift; sourceTree = "<group>"; };
@@ -230,6 +256,8 @@
 		4F6038CE257BC8FB00129F73 /* NearbyCoachTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyCoachTableViewCell.swift; sourceTree = "<group>"; };
 		4F6038D1257BC9EC00129F73 /* NearbyCoachViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyCoachViewModel.swift; sourceTree = "<group>"; };
 		4F6FF056257BDA6800128E87 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		4F74CC59257C9FB5007CDB12 /* CoachRespondRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachRespondRepositoryProtocol.swift; sourceTree = "<group>"; };
+		4F74CC5C257CA00E007CDB12 /* CoachResponseUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoachResponseUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -742,6 +770,8 @@
 		32231B53257BD8AD000A8E21 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				32E545BC257C9E1E009CD027 /* ViewModel */,
+				32E545B7257C9CB6009CD027 /* Cell */,
 				32231B55257BD8C3000A8E21 /* ViewController */,
 				32231B54257BD8B9000A8E21 /* Storyboard */,
 			);
@@ -760,6 +790,7 @@
 			isa = PBXGroup;
 			children = (
 				32231B59257BD8F1000A8E21 /* ProfileViewController.swift */,
+				32E545CE257CC249009CD027 /* ChangePasswordViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -786,6 +817,10 @@
 				32231B6D257BE429000A8E21 /* MyBookingUseCase.swift */,
 				32231B70257BE48D000A8E21 /* NearbyCoachUseCase.swift */,
 				32231B7C257C0947000A8E21 /* CoachPendingInvitationUseCase.swift */,
+				32E545CB257CB3F6009CD027 /* LogoutUserUseCase.swift */,
+				32E545D7257CC515009CD027 /* ChangePasswordUseCase.swift */,
+				4F5F52EC257C94A900DD6F93 /* BookCoachUseCase.swift */,
+				4F74CC5C257CA00E007CDB12 /* CoachResponseUseCase.swift */,
 			);
 			path = UserCase;
 			sourceTree = "<group>";
@@ -802,6 +837,10 @@
 				32231B67257BE3D9000A8E21 /* MyBookingRepositoryProtocol.swift */,
 				32231B6A257BE3FE000A8E21 /* NearbyCoachRepositoryProtocol.swift */,
 				32231B79257C0920000A8E21 /* CoachPendingInvitationRepositoryProtocol.swift */,
+				32E545C8257CB3D5009CD027 /* LogoutUserRepositoryProtocol.swift */,
+				32E545D4257CC4F5009CD027 /* ChangePasswordRepositoryProtocol.swift */,
+				4F5F52E9257C949200DD6F93 /* BookCoachRepositoryProtocol.swift */,
+				4F74CC59257C9FB5007CDB12 /* CoachRespondRepositoryProtocol.swift */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -815,6 +854,25 @@
 				321BD0B625780B5A00D34D41 /* BaseViewController */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		32E545B7257C9CB6009CD027 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				32E545B8257C9CD2009CD027 /* ProfileInfoTableViewCell.swift */,
+				32E545C4257CB34E009CD027 /* ProfileMenuTableViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		32E545BC257C9E1E009CD027 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				32E545BD257C9E52009CD027 /* ProfileViewModel.swift */,
+				32E545C0257C9F65009CD027 /* ProfileInfoCellViewModel.swift */,
+				32E545D1257CC2AE009CD027 /* ChangePasswordViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		32F697E42578963F003B3EC3 /* Button */ = {
@@ -962,8 +1020,10 @@
 				321BD0A6257806C700D34D41 /* BookingRequest.swift in Sources */,
 				32231B0E257BA0C6000A8E21 /* SportListCell.swift in Sources */,
 				32231B71257BE48D000A8E21 /* NearbyCoachUseCase.swift in Sources */,
+				32E545D5257CC4F5009CD027 /* ChangePasswordRepositoryProtocol.swift in Sources */,
 				32231B24257BA911000A8E21 /* UpdateSportRepositoryProtocol.swift in Sources */,
 				32231B12257BA289000A8E21 /* SportRepository.swift in Sources */,
+				4F74CC5D257CA00E007CDB12 /* CoachResponseUseCase.swift in Sources */,
 				32231AC6257B613D000A8E21 /* RegisterUseCase.swift in Sources */,
 				32231AF5257B8D07000A8E21 /* Image+Helper.swift in Sources */,
 				321BD09A257806C700D34D41 /* DPRequestMethod.swift in Sources */,
@@ -972,6 +1032,8 @@
 				321B146B2578939900F635A3 /* UIViewController+Helper.swift in Sources */,
 				32231B3E257BD125000A8E21 /* ChatViewController.swift in Sources */,
 				321BD0D7257818D400D34D41 /* String+Validation.swift in Sources */,
+				32E545BE257C9E52009CD027 /* ProfileViewModel.swift in Sources */,
+				32E545D2257CC2AE009CD027 /* ChangePasswordViewModel.swift in Sources */,
 				321BD0F22578222100D34D41 /* AppButton.swift in Sources */,
 				321BD0E925781B9600D34D41 /* BaseViewController.swift in Sources */,
 				4F6038D2257BC9EC00129F73 /* NearbyCoachViewModel.swift in Sources */,
@@ -991,6 +1053,7 @@
 				321BD0CA257814AD00D34D41 /* LoginViewController.swift in Sources */,
 				321B146625788F9E00F635A3 /* Observable.swift in Sources */,
 				32231AE1257B7E15000A8E21 /* UploadProfilePhotoProtocol.swift in Sources */,
+				32E545D8257CC515009CD027 /* ChangePasswordUseCase.swift in Sources */,
 				32231B7A257C0921000A8E21 /* CoachPendingInvitationRepositoryProtocol.swift in Sources */,
 				32231B65257BE37D000A8E21 /* CoachRepository.swift in Sources */,
 				321BD0C52578141B00D34D41 /* User.swift in Sources */,
@@ -1001,9 +1064,11 @@
 				4F6038BF257BA5E100129F73 /* PaddedLabel.swift in Sources */,
 				4F6FF057257BDA6800128E87 /* LocationManager.swift in Sources */,
 				3289BA482579F14300B3615F /* UItextField+Extension.swift in Sources */,
+				32E545CC257CB3F6009CD027 /* LogoutUserUseCase.swift in Sources */,
 				321BD0C42578141B00D34D41 /* Sport.swift in Sources */,
 				32231AB9257B5592000A8E21 /* AppDICoordinator.swift in Sources */,
 				321BD0A0257806C700D34D41 /* DPLogger.swift in Sources */,
+				32E545CF257CC249009CD027 /* ChangePasswordViewController.swift in Sources */,
 				32231B83257C0C81000A8E21 /* PendingBookingCellViewModel.swift in Sources */,
 				32231B39257BCF95000A8E21 /* AppTabBarViewController.swift in Sources */,
 				32231B5A257BD8F1000A8E21 /* ProfileViewController.swift in Sources */,
@@ -1013,14 +1078,18 @@
 				321B145A25782E9F00F635A3 /* NewAccountViewController.swift in Sources */,
 				321BD094257806C700D34D41 /* APIService.swift in Sources */,
 				321BD095257806C700D34D41 /* APIService+RequestBody.swift in Sources */,
+				4F5F52ED257C94A900DD6F93 /* BookCoachUseCase.swift in Sources */,
 				32231AC2257B5C9F000A8E21 /* Colors.swift in Sources */,
 				32231B16257BA321000A8E21 /* LocalSports.swift in Sources */,
 				32231B6E257BE429000A8E21 /* MyBookingUseCase.swift in Sources */,
 				321BD0E325781A8400D34D41 /* LoaderView.swift in Sources */,
+				32E545C5257CB34E009CD027 /* ProfileMenuTableViewCell.swift in Sources */,
 				321BD0A3257806C700D34D41 /* URLRequest+PrepareBody.swift in Sources */,
+				32E545B9257C9CD2009CD027 /* ProfileInfoTableViewCell.swift in Sources */,
 				32231B09257B9E9C000A8E21 /* SportListViewModel.swift in Sources */,
 				32231B6B257BE3FE000A8E21 /* NearbyCoachRepositoryProtocol.swift in Sources */,
 				321BD0A2257806C700D34D41 /* DPRequestProtocol+Service.swift in Sources */,
+				32E545C9257CB3D5009CD027 /* LogoutUserRepositoryProtocol.swift in Sources */,
 				32231AFE257B90A3000A8E21 /* SportListViewController.swift in Sources */,
 				32231AF8257B8E02000A8E21 /* ImagePickerBaseViewController.swift in Sources */,
 				321BD09B257806C700D34D41 /* DPRequestBody.swift in Sources */,
@@ -1046,15 +1115,18 @@
 				321FA06B257B4E1700776C78 /* UserRepository.swift in Sources */,
 				32231AC9257B616C000A8E21 /* RegisterRepositoryProtocol.swift in Sources */,
 				32231B1D257BA40C000A8E21 /* SportListUseCase.swift in Sources */,
+				32E545C1257C9F65009CD027 /* ProfileInfoCellViewModel.swift in Sources */,
 				321BD0742578063A00D34D41 /* Constant.swift in Sources */,
 				321BD097257806C700D34D41 /* DPRequestConnectionConfiguration.swift in Sources */,
 				32231B2F257BB41C000A8E21 /* SportListCellViewModel.swift in Sources */,
 				321BD093257806C600D34D41 /* APIService+RequestPath.swift in Sources */,
 				4F6038CC257BB7A100129F73 /* SportCollectionViewCell.swift in Sources */,
 				321BD09F257806C700D34D41 /* DPResponse.swift in Sources */,
+				4F74CC5A257C9FB5007CDB12 /* CoachRespondRepositoryProtocol.swift in Sources */,
 				4F6038C4257BAE2D00129F73 /* CurrentBookingViewModel.swift in Sources */,
 				321BD0A4257806C700D34D41 /* CoachRequest.swift in Sources */,
 				321BD09C257806C700D34D41 /* DPRequestProtocol.swift in Sources */,
+				4F5F52EA257C949200DD6F93 /* BookCoachRepositoryProtocol.swift in Sources */,
 				321FA070257B500700776C78 /* LoginUseCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1197,6 +1269,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7LQ3D5HUJT;
 				INFOPLIST_FILE = BookMyCoach/Application/Plist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1216,6 +1289,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7LQ3D5HUJT;
 				INFOPLIST_FILE = BookMyCoach/Application/Plist/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

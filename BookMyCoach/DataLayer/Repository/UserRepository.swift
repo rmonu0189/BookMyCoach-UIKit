@@ -9,7 +9,9 @@ import Foundation
 
 protocol UserRepositoryProtocol: LoginRepositoryProtocol,
                                  RegisterRepositoryProtocol,
-                                 UpdateUserRepositoryProtocol { }
+                                 UpdateUserRepositoryProtocol,
+                                 LogoutUserRepositoryProtocol,
+                                 ChangePasswordRepositoryProtocol { }
 
 class UserRepository: UserRepositoryProtocol {
     
@@ -34,7 +36,7 @@ class UserRepository: UserRepositoryProtocol {
         }
     }
     
-    func changePassword(_ oldPassword: String, _ newPassword: String, _ handler: @escaping (Bool, Error?)-> ()) {
+    func changePassword(oldPassword: String, newPassword: String, handler: @escaping (Bool, Error?)-> ()) {
         let service = APIService.changePassword(request: UpdatePasswordRequest(oldPassword: oldPassword, newPassword: newPassword))
         service.submit { response in
             handler(response.isSuccess, response.error)
@@ -44,10 +46,6 @@ class UserRepository: UserRepositoryProtocol {
     func logout(_ handler: @escaping (Bool, Error?)-> ()) {
         let service = APIService.logout
         service.submit { response in
-            if response.isSuccess {
-                UserManager.shared.deleteActiveUser()
-                UserManager.shared.accessToken = nil
-            }
             handler(response.isSuccess, response.error)
         }
     }

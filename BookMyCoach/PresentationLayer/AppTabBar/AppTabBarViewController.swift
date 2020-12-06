@@ -28,8 +28,8 @@ class AppTabBarViewController: UITabBarController {
         items.append(AppDICoordinator.appNavigation(chatController))
         
         let profileController = AppDICoordinator.profileViewController()
-        profileController.tabBarItem = UITabBarItem(title: "Profile", image: UIImage(systemName: "person.fill"), selectedImage: nil)
-        items.append(AppDICoordinator.appNavigation(profileController))
+        profileController.tabBarItem = UITabBarItem(title: "Account", image: UIImage(systemName: "person.fill"), selectedImage: nil)
+        items.append(AppDICoordinator.appNavigation(profileController, isLargeTitle: true))
         
         tabBarController.viewControllers = items
         

@@ -77,6 +77,7 @@ class UserManager: NSObject, ObservableObject {
         do {
             let data = try JSONEncoder().encode(activeUser)
             UserDefaults.standard.set(data, forKey: SerializationKeys.activeUser)
+            UserDefaults.standard.synchronize()
         } catch {
             print(error)
         }

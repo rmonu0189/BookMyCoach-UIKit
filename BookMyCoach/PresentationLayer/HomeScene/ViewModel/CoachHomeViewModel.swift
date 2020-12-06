@@ -14,6 +14,7 @@ protocol CoachHomeViewModelInput {
     func viewWillAppear()
     func booking(at index: Int) -> CurrentBookingViewModelProtocol
     func pendingBooking(at index: Int) -> PendingBookingCellViewModelProtocol
+    func bookingResponseAction(bookingId: Int, isAccept: Bool)
 }
 
 protocol CoachHomeViewModelOutput {
@@ -30,6 +31,7 @@ class CoachHomeViewModel: CoachHomeViewModelProtocol {
     
     private let pendingInvitationUseCase: CoachPendingInvitationUseCaseProtocol
     private let myBookingUseCase: MyBookingUseCaseProtocol
+    private let responseToBookingUseCase: CoachResponseUseCaseProtocol
     private let locationManager: LocationManager
     
     var pendingBookings: Observable<[Booking]> = Observable([])
@@ -37,10 +39,12 @@ class CoachHomeViewModel: CoachHomeViewModelProtocol {
     var placemark: Observable<String> = Observable(nil)
     var error: Observable<Error> = Observable(nil)
     var showLoader: Observable<Bool> = Observable(nil)
+    var showSuccess: Observable<Bool> = Observable(nil)
     
-    init(pendingInvitationUseCase: CoachPendingInvitationUseCaseProtocol, myBookingUseCase: MyBookingUseCaseProtocol, locationManager: LocationManager) {
+    init(pendingInvitationUseCase: CoachPendingInvitationUseCaseProtocol, myBookingUseCase: MyBookingUseCaseProtocol, responseToBookingUseCase: CoachResponseUseCaseProtocol, locationManager: LocationManager) {
         self.pendingInvitationUseCase = pendingInvitationUseCase
         self.myBookingUseCase = myBookingUseCase
+        self.responseToBookingUseCase = responseToBookingUseCase
         self.locationManager = locationManager
         self.fetchCurrentLocation()
     }
@@ -108,5 +112,18 @@ extension CoachHomeViewModel {
             return PendingBookingCellViewModel(item)
         }
         fatalError("Booking not found at index \(index)")
+    }
+    
+    func bookingResponseAction(bookingId: Int, isAccept: Bool) {
+        self.showLoader.value = true
+        responseToBookingUseCase.respondToBookingRequest(bookingId: bookingId, isAccept: isAccept) { [weak self] (success, error) in
+            self?.showLoader.value = false
+            if error == nil {
+                self?.fetchPendingInvitations()
+                self?.showSuccess.value = isAccept
+            } else {
+                self?.error.value = error
+            }
+        }
     }
 }

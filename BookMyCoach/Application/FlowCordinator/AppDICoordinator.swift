@@ -27,6 +27,12 @@ class AppDICoordinator {
         AppDelegate.shared.window?.makeKeyAndVisible()
     }
     
+    class func setRootControllerAfterLoggedOutUser() {
+        let controller = appNavigation(loginViewController(), isLargeTitle: true)
+        AppDelegate.shared.window?.rootViewController = controller
+        AppDelegate.shared.window?.makeKeyAndVisible()
+    }
+    
     class func rootController() -> UIViewController {
         if UserManager.shared.isLoggedInUser() == true {
             let user = UserManager.shared.activeUser
@@ -89,7 +95,8 @@ class AppDICoordinator {
         let myBookingUseCase = MyBookingUseCase(repository: BookingRepository())
         let nearbyCoachUseCase = NearbyCoachUseCase(repository: CoachRepository())
         let sportListUseCase = SportListUseCase(repository: SportRepository())
-        let viewModel = PlayerHomeViewModel(myBookingUseCase: myBookingUseCase, nearbyCoachUseCase: nearbyCoachUseCase, sportListUseCase: sportListUseCase, locationManager: LocationManager())
+        let bookCoachUseCase = BookCoachUseCase(repository: CoachRepository())
+        let viewModel = PlayerHomeViewModel(myBookingUseCase: myBookingUseCase, nearbyCoachUseCase: nearbyCoachUseCase, sportListUseCase: sportListUseCase, bookCoachUseCase: bookCoachUseCase, locationManager: LocationManager())
         controller.viewModel = viewModel
         return controller
     }
@@ -98,7 +105,8 @@ class AppDICoordinator {
         let controller = UIViewController.controller(CoachHomeViewController.self, name: .Home)
         let myBookingUseCase = MyBookingUseCase(repository: BookingRepository())
         let pendingBookingUseCase = CoachPendingInvitationUseCase(repository: BookingRepository())
-        let viewModel = CoachHomeViewModel(pendingInvitationUseCase: pendingBookingUseCase, myBookingUseCase: myBookingUseCase, locationManager: LocationManager())
+        let bookingResponseUseCase = CoachResponseUseCase(repository: BookingRepository())
+        let viewModel = CoachHomeViewModel(pendingInvitationUseCase: pendingBookingUseCase, myBookingUseCase: myBookingUseCase, responseToBookingUseCase: bookingResponseUseCase, locationManager: LocationManager())
         controller.viewModel = viewModel
         return controller
     }
@@ -112,6 +120,18 @@ class AppDICoordinator {
     }
     
     class func profileViewController() -> ProfileViewController {
-        return UIViewController.controller(ProfileViewController.self, name: .Profile)
+        let user = UserManager.shared.activeUser
+        let controller = UIViewController.controller(ProfileViewController.self, name: .Profile)
+        let useCase = LogoutUserUseCase(repository: UserRepository())
+        controller.viewModel = ProfileViewModel(user: user, logoutUserUseCase: useCase)
+        return controller
     }
+    
+    class func changePasswordViewController() -> UIViewController {
+        let controller = UIViewController.controller(ChangePasswordViewController.self, name: .Profile)
+        let useCase = ChangePasswordUseCase(repository: UserRepository())
+        controller.viewModel = ChangePasswordViewModel(changePasswordUseCase: useCase)
+        return controller
+    }
+    
 }

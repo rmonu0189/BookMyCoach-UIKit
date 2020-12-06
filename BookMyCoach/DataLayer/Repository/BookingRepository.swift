@@ -7,7 +7,7 @@
 
 import Foundation
 
-class BookingRepository: MyBookingRepositoryProtocol, CoachPendingInvitationRepositoryProtocol {
+class BookingRepository: MyBookingRepositoryProtocol, CoachPendingInvitationRepositoryProtocol, CoachRespondRepositoryProtocol {
     
     func fetchMyBookings(handler: @escaping ([Booking], Error?) -> ()) {
         let service = APIService.getMyBookings

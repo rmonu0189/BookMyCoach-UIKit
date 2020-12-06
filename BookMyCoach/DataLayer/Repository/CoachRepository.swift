@@ -7,7 +7,7 @@
 
 import Foundation
 
-class CoachRepository: NearbyCoachRepositoryProtocol {
+class CoachRepository: NearbyCoachRepositoryProtocol, BookCoachRepositoryProtocol {
     
     func nearbyCoach(_ request: NearbyCoachRequest, handler: @escaping ([User]?, Error?) -> ()) {
         let service = APIService.getNearbyCoaches(request: request)

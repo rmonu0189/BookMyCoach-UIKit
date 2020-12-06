@@ -18,6 +18,7 @@ class CoachHomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
+        tableView.tableFooterView = UIView()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +53,15 @@ class CoachHomeViewController: UIViewController {
             self.currentLocationBarItem.title = placemark
         }
         
+        viewModel.showSuccess.bind { isAccepted in
+            guard isAccepted != nil else { return }
+            if isAccepted == true {
+                ToastView.showSuccess(Constant.bookingRequestAccepted)
+            } else {
+                ToastView.showSuccess(Constant.bookingRequestRejected)
+            }
+        }
+        
     }
     
 }
@@ -65,6 +75,9 @@ extension CoachHomeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.cellWithType(PendingBookingTableViewCell.self, indexPath: indexPath)
         cell.fill(with: viewModel.pendingBooking(at: indexPath.item))
+        cell.bookingResponseAction = { [weak self] (bookingId, isAccepted) in
+            self?.viewModel.bookingResponseAction(bookingId: bookingId, isAccept: isAccepted)
+        }
         return cell
     }
     

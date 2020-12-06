@@ -46,11 +46,26 @@ extension UIViewController {
         controller?.navigationController?.viewControllers = [self]
     }
     
-    func popViewController(animation: Bool = true) {
+    func popController(animation: Bool = true) {
         if self.navigationController == nil {
             self.dismiss(animated: animation, completion: nil)
         } else {
-            self.navigationController?.popViewController(animation: true)
+            self.navigationController?.popViewController(animated: animation)
         }
     }
+}
+
+extension UIViewController {
+    
+    func showConfirmAlert(title: String, message: String, action: @escaping (Bool) -> ()) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "YES", style: .default, handler: { _ in
+            action(true)
+        }))
+        alert.addAction(UIAlertAction(title: "NO", style: .cancel, handler: { _ in
+            action(false)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }

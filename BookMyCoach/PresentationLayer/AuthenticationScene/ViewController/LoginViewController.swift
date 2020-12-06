@@ -11,7 +11,7 @@ class LoginViewController: BaseViewController {
 
     @IBOutlet weak var emailTextField: AppTextField!
     @IBOutlet weak var passwordTextField: AppTextField!
-    
+        
     var loginViewModel: LoginViewModel!
 
     override func viewDidLoad() {

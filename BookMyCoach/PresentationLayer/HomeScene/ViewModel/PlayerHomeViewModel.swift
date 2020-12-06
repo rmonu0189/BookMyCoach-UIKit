@@ -15,6 +15,7 @@ protocol PlayerHomeViewModelInput {
     var totalCoaches: Int { get }
     
     func viewWillAppear()
+    func bookNowAction(coachId: Int)
     func booking(at index: Int) -> CurrentBookingViewModelProtocol
     func sport(at index: Int) -> Sport
     func coach(at index: Int) -> NearbyCoachViewModelProtocol
@@ -27,15 +28,18 @@ protocol PlayerHomeViewModelOutput {
     var placemark: Observable<String> { get set }
     var error: Observable<Error> { get set }
     var showLoader: Observable<Bool> { get set }
+    var showBookingSuccess: Observable<Bool> { get set }
 }
 
 protocol PlayerHomeViewModelProtocol: PlayerHomeViewModelInput, PlayerHomeViewModelOutput { }
 
 class PlayerHomeViewModel: PlayerHomeViewModelProtocol {
+
     
     private let myBookingUseCase: MyBookingUseCaseProtocol
     private let nearbyCoachUseCase: NearbyCoachUseCaseProtocol
     private let sportListUseCase: SportListUseCaseProtocol
+    private let bookCoachUseCase: BookCoachUseCaseProtocol
     private let locationManager: LocationManager
     private var currentLocation: CLLocation?
     
@@ -45,11 +49,13 @@ class PlayerHomeViewModel: PlayerHomeViewModelProtocol {
     var placemark: Observable<String> = Observable(nil)
     var error: Observable<Error> = Observable(nil)
     var showLoader: Observable<Bool> = Observable(nil)
+    var showBookingSuccess: Observable<Bool> = Observable(nil)
     
-    init(myBookingUseCase: MyBookingUseCaseProtocol, nearbyCoachUseCase: NearbyCoachUseCaseProtocol, sportListUseCase: SportListUseCaseProtocol, locationManager: LocationManager) {
+    init(myBookingUseCase: MyBookingUseCaseProtocol, nearbyCoachUseCase: NearbyCoachUseCaseProtocol, sportListUseCase: SportListUseCaseProtocol, bookCoachUseCase: BookCoachUseCaseProtocol, locationManager: LocationManager) {
         self.myBookingUseCase = myBookingUseCase
         self.nearbyCoachUseCase = nearbyCoachUseCase
         self.sportListUseCase = sportListUseCase
+        self.bookCoachUseCase = bookCoachUseCase
         self.locationManager = locationManager
         self.fetchCurrentLocation()
     }
@@ -99,7 +105,7 @@ class PlayerHomeViewModel: PlayerHomeViewModelProtocol {
         nearbyCoachUseCase.nearbyCoach(latitude: latitude, longitude: longitude) { [weak self] (coaches, error) in
             self?.showLoader.value = false
             if error == nil {
-                self?.coaches.value = coaches
+                self?.coaches.value = coaches?.filter({ $0.bookingStatus == .none })
             } else {
                 self?.error.value = error
             }
@@ -147,6 +153,20 @@ extension PlayerHomeViewModel {
             return NearbyCoachViewModel(item)
         }
         fatalError("Sport not found at index \(index)")
+    }
+    
+    func bookNowAction(coachId: Int) {
+        self.showLoader.value = true
+        bookCoachUseCase.bookCoach(coachId: coachId) { [weak self] (bookings, error) in
+            self?.showLoader.value = false
+            if error == nil {
+                self?.showBookingSuccess.value = true
+                self?.fetchMyBookings()
+                self?.fetchNearbyCoaches()
+            } else {
+                self?.error.value = error
+            }
+        }
     }
     
 }

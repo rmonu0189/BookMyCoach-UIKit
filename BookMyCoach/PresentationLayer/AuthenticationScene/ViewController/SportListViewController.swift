@@ -52,7 +52,8 @@ class SportListViewController: UIViewController {
                 if self?.viewModel.viewMode == ViewMode.normal {
                     AppDICoordinator.setRootControllerForLoggedInUser()
                 } else {
-                    self?.popViewController()
+                    ToastView.showSuccess(Constant.sportUpdateSuccess)
+                    self?.popController()
                 }
             }
         }

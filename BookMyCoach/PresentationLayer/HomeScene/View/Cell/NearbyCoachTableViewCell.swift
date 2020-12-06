@@ -17,6 +17,8 @@ class NearbyCoachTableViewCell: UITableViewCell {
     @IBOutlet weak var priceLabel: UILabel?
     @IBOutlet weak var bookNowButon: UIButton?
 
+    var bookNowAction: ((Int) -> ())?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -35,6 +37,11 @@ class NearbyCoachTableViewCell: UITableViewCell {
         ratingLabel?.text = viewModel.rating
         priceLabel?.text = viewModel.price
         avtarImageView?.kf.setImage(with: URL(string: viewModel.avtarImageURL), placeholder: viewModel.coachName.image(200, isCircular: false))
+        bookNowButon?.tag = viewModel.coachId
+    }
+    
+    @IBAction func bookNowTapped(_ sender: UIButton) {
+        bookNowAction?(sender.tag)
     }
 
 }
